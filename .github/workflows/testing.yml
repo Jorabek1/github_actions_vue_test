@@ -1,11 +1,12 @@
 name: Test Vue app
 on: push
 jobs: 
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Get repositiry code 
-      uses: actions/checkout@v4
-    - name: install dependense
-      run: npm ci
-    - name: Test application
-      run: echo testing...
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get repositiry code 
+        uses: actions/checkout@v4
+      - name: install dependense
+        run: npm ci
+      - name: Test application
+        run: echo testing...
