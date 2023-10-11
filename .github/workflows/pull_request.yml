@@ -7,5 +7,5 @@ jobs:
     print: 
         runs-on: ubuntu-latest
         steps: 
-            - name: Print context
+            - name: Test pull request
               run: echo "${{ toJson(github.event) }}"
