@@ -11,6 +11,11 @@ jobs:
     steps: 
       - name: Get repositiry code 
         uses: actions/checkout@v4
+      - name: Cache deps 
+        uses: actions/cache@v3
+        with: 
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: install dependense
         run: npm ci
       - name: Test application
@@ -21,6 +26,11 @@ jobs:
     steps: 
       - name: Get repositiry code 
         uses: actions/checkout@v4
+      - name: Cache deps 
+        uses: actions/cache@v3
+        with: 
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: install dependense
         run: npm ci
       - name: Lint application
@@ -31,6 +41,11 @@ jobs:
     steps: 
       - name: Get repositiry code 
         uses: actions/checkout@v4
+      - name: Cache deps 
+        uses: actions/cache@v3
+        with: 
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: install dependense
         run: npm ci
       - name: Build application
