@@ -1,0 +1,18 @@
+name: Build
+on: [push, workflow_dispatch]
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code 
+        uses: actions/checkout@v4
+      - name: Install dependense
+        run: npm ci
+      - name: Build application
+        run: npm run build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          path: dist
+          name: build-files
+
