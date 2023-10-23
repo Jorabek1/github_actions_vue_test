@@ -3,7 +3,7 @@ name: Netlify Deploy
 on:
   push:
     branches:
-      - master  # Deploy when changes are pushed to the master branch
+      - main  # Adjust to your main branch name
 
 jobs:
   deploy:
@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
       - name: Build
         run: npm run build
 
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --prod --message "Auto deploy from GitHub Actions"
+        run: npx netlify-cli deploy --prod
