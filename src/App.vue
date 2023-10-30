@@ -1,13 +1,14 @@
-<template lang="">
+<template lang="" v-if="count === 1" >
   <div>
-    <h1 align='center'>Welcome to Vue js</h1>
+    <h1 align='center'>Welcome to Vue js {{count}}</h1>
     
   </div>
 </template>
-<script>
-export default {
-  
-}
+<template lang="" v-else>
+
+</template>
+<script setup>
+let count = 0
 </script>
 <style lang="">
   
